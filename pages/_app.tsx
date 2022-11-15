@@ -5,14 +5,14 @@ import Main from "../components/layouts/main";
 import "../lib/global.css";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-    console.log(theme);
-    return (
-        <ChakraProvider theme={theme}>
-            <Main router={router} title={Component.name}>
-                <Component {...pageProps} />
-            </Main>
-        </ChakraProvider>
-    );
+  // console.log(theme);
+  return (
+    <ChakraProvider theme={theme}>
+      <Main router={router} title={Component.name}>
+        <Component {...pageProps} />
+      </Main>
+    </ChakraProvider>
+  );
 }
 
 export default MyApp;
