@@ -6,18 +6,18 @@
 //
 import NextLink from "next/link";
 import {
-    Container,
-    Box,
-    Link,
-    Stack,
-    Heading,
-    Flex,
-    Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
-    useColorModeValue,
-    IconButton,
+  Container,
+  Box,
+  Link,
+  Stack,
+  Heading,
+  Flex,
+  Menu,
+  MenuItem,
+  MenuList,
+  MenuButton,
+  useColorModeValue,
+  IconButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./ThemeToggleButton";
@@ -25,62 +25,62 @@ import type { Router } from "next/dist/client/router"; //I use this import just 
 import LinkItem from "./LinkItem";
 
 type props = {
-    path: string;
+  path: string;
 };
 
 const Links = ["Inicio"];
 
 const NavBar = ({ path }: props) => {
-    return (
-        <Box
-            position="fixed"
-            as="nav"
-            w="100%"
-            bg={useColorModeValue("#ffffff40", "#20202380")}
-            style={{ backdropFilter: "blur(10px)" }}
-            zIndex={100}
+  return (
+    <Box
+      position="fixed"
+      as="nav"
+      w="100%"
+      bg={useColorModeValue("#ffffff40", "#20202380")}
+      style={{ backdropFilter: "blur(10px)" }}
+      zIndex={100}
+    >
+      <Container
+        display="flex"
+        p={2}
+        maxW="container.md"
+        flexWrap="wrap"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          display={{ base: "none", md: "flex" }}
+          w={{ base: "full", md: "auto" }}
+          align="center"
+          flexGrow={1}
+          mt={{ base: 4, nmd: 0 }}
         >
-            <Container
-                display="flex"
-                p={2}
-                maxW="container.md"
-                flexWrap="wrap"
-                alignItems="center"
-                justifyContent="space-between"
-            >
-                <Stack
-                    direction={{ base: "column", md: "row" }}
-                    display={{ base: "none", md: "flex" }}
-                    w={{ base: "full", md: "auto" }}
-                    align="center"
-                    flexGrow={1}
-                    mt={{ base: 4, nmd: 0 }}
-                >
-                    <LinkItem href="/" path={path}>
-                        {Links[0]}
-                    </LinkItem>
-                </Stack>
-                <Flex flex={1} justify="end">
-                    <ThemeToggleButton />
-                    <Box ml={2} display={{ base: "inline-block", md: "none" }}>
-                        <Menu>
-                            <MenuButton
-                                as={IconButton}
-                                icon={<HamburgerIcon />}
-                                variant="outline"
-                                aria-label="Options"
-                            />
-                            <MenuList>
-                                <NextLink href="/" passHref>
-                                    <MenuItem as={Link}>{Links[0]}</MenuItem>
-                                </NextLink>
-                            </MenuList>
-                        </Menu>
-                    </Box>
-                </Flex>
-            </Container>
-        </Box>
-    );
+          <LinkItem href="/" path={path}>
+            {Links[0]}
+          </LinkItem>
+        </Stack>
+        <Flex flex={1} justify="end">
+          <ThemeToggleButton />
+          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
+              <MenuList>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>{Links[0]}</MenuItem>
+                </NextLink>
+              </MenuList>
+            </Menu>
+          </Box>
+        </Flex>
+      </Container>
+    </Box>
+  );
 };
 
 export default NavBar;
