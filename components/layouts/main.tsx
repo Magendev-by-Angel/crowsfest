@@ -16,7 +16,9 @@ const Main = ({ children, router, title }: Props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <title>
-          {title === "notFound" ? " - Page not found" : `- ${title}`}
+          {title === "notFound"
+            ? "Crows Fest - Page not found"
+            : `Crows Fest - ${title}`}
         </title>
       </Head>
       <NavBar path={router.asPath} />

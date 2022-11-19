@@ -55,7 +55,7 @@ const Inicio = () => {
         </Box>
       </Grid>
       <Slider time={time} setTime={setTime} />
-      <Grid mt="20rem">
+      <Grid mt={{ base: "5rem", md: "20rem" }}>
         <Box
           fontSize="2.5rem"
           fontFamily={`'Ubuntu', sans-serif`}
@@ -84,7 +84,7 @@ const Inicio = () => {
             <Flex gridArea="title" {...foundersTitleName}>
               Leonardo de la Salas
             </Flex>
-            <Flex gridArea="text">Leonardo de la Salas</Flex>
+            <Flex gridArea="text">Head of the event and main orginizer.</Flex>
           </Grid>
           <Grid gridArea="davpicture" {...foundersIconStyle}>
             <Image src="/Founders/david.jpg" />
@@ -93,7 +93,7 @@ const Inicio = () => {
             <Flex gridArea="title" {...foundersTitleName}>
               David Fernandez
             </Flex>
-            <Flex gridArea="text">Leonardo de la Salas</Flex>
+            <Flex gridArea="text">Legal strategist and Stage manager</Flex>
           </Grid>
           <Grid gridArea="angpicture" {...foundersIconStyle}>
             <Image src="/Founders/angel.jpg" />
@@ -102,7 +102,7 @@ const Inicio = () => {
             <Flex gridArea="title" {...foundersTitleName}>
               Angel Zuñiga
             </Flex>
-            <Flex gridArea="text">Leonardo de la Salas</Flex>
+            <Flex gridArea="text">Technical lead and second Stage lead</Flex>
           </Grid>
         </Grid>
       </Grid>
