@@ -28,7 +28,10 @@ type props = {
   path: string;
 };
 
-const Links = ["Inicio"];
+const Links = [
+  { url: "/", name: "Inicio" },
+  { url: "/gallery", name: "Galeria" },
+];
 
 const NavBar = ({ path }: props) => {
   return (
@@ -56,9 +59,13 @@ const NavBar = ({ path }: props) => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href="/" path={path}>
-            {Links[0]}
-          </LinkItem>
+          {Links.map((item, i) => {
+            return (
+              <LinkItem href={item.url} path={path} key={i}>
+                {item.name}
+              </LinkItem>
+            );
+          })}
         </Stack>
         <Flex flex={1} justify="end">
           <ThemeToggleButton />
@@ -71,9 +78,13 @@ const NavBar = ({ path }: props) => {
                 aria-label="Options"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>{Links[0]}</MenuItem>
-                </NextLink>
+                {Links.map((item, i) => {
+                  return (
+                    <NextLink href={item.url} passHref key={i}>
+                      <MenuItem as={Link}>{item.name}</MenuItem>
+                    </NextLink>
+                  );
+                })}
               </MenuList>
             </Menu>
           </Box>
