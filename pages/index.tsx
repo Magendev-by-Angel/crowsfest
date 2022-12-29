@@ -1,4 +1,5 @@
 import { Box, Image, Grid, useColorModeValue, Flex } from "@chakra-ui/react";
+import Head from "next/head";
 import Slider from "../components/Slider";
 import { useState } from "react";
 const Inicio = () => {
@@ -28,6 +29,9 @@ const Inicio = () => {
   const [time, setTime] = useState(210);
   return (
     <Box>
+      <Head>
+        <title>Crows Fest - Inicio</title>
+      </Head>
       <Grid
         templateColumns="12.5% 1fr 12.5%"
         templateRows="1fr"
